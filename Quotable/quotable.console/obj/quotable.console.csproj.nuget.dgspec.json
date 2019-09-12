@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj": {
+                "projectPath": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -44,6 +48,58 @@
             "Microsoft.NETCore.App": {
               "target": "Package",
               "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj",
+        "projectName": "quotable.core",
+        "projectPath": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj",
+        "packagesPath": "C:\\Users\\rogeto20\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rogeto20\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
               "autoReferenced": true
             }
           },
