@@ -1,4 +1,5 @@
 ﻿using System;
+using quotable.core;
 
 
 namespace quotable.console
@@ -8,12 +9,25 @@ namespace quotable.console
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the number of quotes you want:");
-            //int num;
-            //bool isNumber = int.TryParse(Console.ReadLine(), out num);
+            int number;
+            bool isNumber = int.TryParse(Console.ReadLine(), out number);
 
-            int num = int.Parse(Console.ReadLine());
+            
+            while (!isNumber)
+            {
+                Console.WriteLine("Enter the number of quotes you want:");
+                isNumber = int.TryParse(Console.ReadLine(), out number);
+            }
 
-            var obj = new SimpleRandomQuoteProvider();
+            SimpleRandomQuoteProvider obj = new SimpleRandomQuoteProvider();
+            var quotes = obj.getQuotes(number);
+
+            foreach (string quote in quotes)
+            {
+                Console.WriteLine(quote);
+            }
+
+            Console.ReadKey();
         }
     }
 }

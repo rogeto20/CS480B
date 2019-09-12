@@ -26,3 +26,5 @@
 /Quotable/quotable.core/bin/Debug/netstandard2.0/*
 /Quotable/quotable.console/bin/Debug/netcoreapp2.1/*
 *.txt
+/Quotable/quotable.console/obj/Debug/netcoreapp2.0/quotable.console.AssemblyInfo.cs
+/Quotable/quotable.console/obj/Release/netcoreapp2.0/quotable.console.AssemblyInfo.cs
