@@ -2,4 +2,16 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+
+*/netcoreapp2.1/*
+*/netcoreapp2.0/*
+*/obj/*
+*/bin/*
+!*/bin/Debug
+!*/bin/Release
+!*/obj/Debug
+!*/obj/Release
+/Quotable/.vs/quotable.sln/v16/Server/sqlite3/db.lock
+*.ide
+*.ide-shm
 *.ide-wal

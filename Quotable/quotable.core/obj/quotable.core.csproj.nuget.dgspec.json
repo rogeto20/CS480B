@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj": {}
+    "C:\\Users\\rogeto20\\Source\\Repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj": {
+    "C:\\Users\\rogeto20\\Source\\Repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj",
+        "projectUniqueName": "C:\\Users\\rogeto20\\Source\\Repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj",
         "projectName": "quotable.core",
-        "projectPath": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj",
+        "projectPath": "C:\\Users\\rogeto20\\Source\\Repos\\CS480B\\Quotable\\quotable.core\\quotable.core.csproj",
         "packagesPath": "C:\\Users\\rogeto20\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rogeto20\\source\\repos\\CS480B\\Quotable\\quotable.core\\obj\\",
+        "outputPath": "C:\\Users\\rogeto20\\Source\\Repos\\CS480B\\Quotable\\quotable.core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
