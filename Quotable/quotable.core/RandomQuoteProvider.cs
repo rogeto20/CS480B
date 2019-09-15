@@ -6,6 +6,6 @@ namespace quotable.core
 {
     public interface RandomQuoteProvider
     {
-        IEnumerable<string> getQuotes(int num);
+        IEnumerable<string> getQuotes(long numOfQuotes);
     }
 }
