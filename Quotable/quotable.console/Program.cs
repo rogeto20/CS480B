@@ -9,18 +9,18 @@ namespace quotable.console
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the number of quotes you want:");
-            int number;
-            bool isNumber = int.TryParse(Console.ReadLine(), out number);
+            long numOfQuotes;
+            bool isNumber = long.TryParse(Console.ReadLine(), out numOfQuotes);
 
             
             while (!isNumber)
             {
                 Console.WriteLine("Enter the number of quotes you want:");
-                isNumber = int.TryParse(Console.ReadLine(), out number);
+                isNumber = long.TryParse(Console.ReadLine(), out numOfQuotes);
             }
 
             SimpleRandomQuoteProvider obj = new SimpleRandomQuoteProvider();
-            var quotes = obj.getQuotes(number);
+            var quotes = obj.getQuotes(numOfQuotes);
 
             foreach (string quote in quotes)
             {
