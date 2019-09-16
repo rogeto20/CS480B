@@ -14,12 +14,11 @@ namespace quotable.core
 
         public static IEnumerable<string> generateQuotes(){
             List<string> list = new List<string>();
-            String path = @"./quotes.txt";
+            String path = @"../quotable.core/quotes.txt";
             string[] lines = File.ReadAllLines(path);
   
             foreach (string line in lines)  {
-                //list.add(line);
-                Console.WriteLine(line);
+                list.Add(line);
             }
 
             return list;
@@ -29,8 +28,8 @@ namespace quotable.core
         }
 
         public static DefaultRandomQuoteGenerator getGenerator(){
-            DefaultRandomQuoteGenerator obj = new DefaultRandomQuoteGenerator(generateQuotes());
-            return obj;
+            DefaultRandomQuoteGenerator quoteGenerator = new DefaultRandomQuoteGenerator(generateQuotes());
+            return quoteGenerator;
         }
     }
 }
