@@ -27,6 +27,8 @@ namespace quotable.console
                 Console.WriteLine(quote);
             }
 
+            DefaultRandomQuoteGenerator test = DefaultRandomQuoteGenerator.getGenerator();
+
             Console.ReadKey();
         }
     }
