@@ -4,13 +4,18 @@ using System.Text;
 
 namespace quotable.core
 {
-    ///Class providing random quotes
+   /// <summary>
+   /// Class providing random quotes
+   /// </summary>
     public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         DefaultRandomQuoteGenerator quoteGenerator = DefaultRandomQuoteGenerator.getGenerator();
 
-        ///Returns a number of quotes depending on the number
-        ///passed in as a parameter
+        /// <summary>
+        /// Gets the number of quotes provided
+        /// </summary>
+        /// <param name="numOfQuotes">Number of quotes requested</param>
+        /// <returns>list of quotes</returns>
         public IEnumerable<string> getQuotes(long numOfQuotes)
         {
             List<string> list = new List<string>();
