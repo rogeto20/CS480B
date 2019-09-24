@@ -26,7 +26,7 @@ namespace quotable.core
         /// <returns>list of quotes</returns>
         public static IEnumerable<string> generateQuotes(){
             List<string> list = new List<string>();
-            String path = @"../../../.../quotable.core/quotes.txt";
+            String path = @"../../../../quotable.core/quotes.txt";
             string[] lines = File.ReadAllLines(path);
   
             foreach (string line in lines)  {
