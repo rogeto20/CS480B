@@ -4,7 +4,7 @@ using System.Text;
 
 namespace quotable.core
 {
-    class Quotes
+    public class Quotes
     {
         public int ID { get; set; }
         public string Quote { get; set; }

@@ -10,13 +10,13 @@ namespace quotable.core
     /// </summary>
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
-        public IEnumerable<string> quotes;
+        public IEnumerable<Quotes> quotes;
 
         /// <summary>
         /// Quote generator constructor
         /// </summary>
         /// <param name="listOfQuotes">Takes in a list of quotes</param>
-        public DefaultRandomQuoteGenerator(IEnumerable<string> listOfQuotes){
+        public DefaultRandomQuoteGenerator(IEnumerable<Quotes> listOfQuotes){
             quotes = listOfQuotes;
         }
 
@@ -24,13 +24,17 @@ namespace quotable.core
         /// Generates quotes from a text file called quotes.txt found in the project directory
         /// </summary>
         /// <returns>list of quotes</returns>
-        public static IEnumerable<string> generateQuotes(){
-            List<string> list = new List<string>();
+        public static IEnumerable<Quotes> generateQuotes(){
+            List<Quotes> list = new List<Quotes>();
             String path = @"~'/../../quotable.core/quotes.txt";
             string[] lines = File.ReadAllLines(path);
   
             foreach (string line in lines)  {
-                list.Add(line);
+                Quotes quote = new Quotes();
+                quote.ID = Array.IndexOf(lines, line);
+                quote.Quote = line;
+                quote.Author = "Rome";
+                list.Add(quote);
             }
 
             return list;

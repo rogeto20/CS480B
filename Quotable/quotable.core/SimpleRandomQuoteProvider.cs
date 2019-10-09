@@ -39,9 +39,9 @@ namespace quotable.core
         /// This method returns all the strings that are generated
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<string> getQuotes()
+        public IEnumerable<Quotes> getQuotes()
         {
-            return (List<string>)quoteGenerator.quotes;
+            return (List<Quotes>)quoteGenerator.quotes;
         }
     }
 }

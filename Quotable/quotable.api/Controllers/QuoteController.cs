@@ -14,7 +14,7 @@ namespace quotable.api.Controllers
     {
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Quotes> Get()
         {
             SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider();
 
