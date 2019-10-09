@@ -43,5 +43,16 @@ namespace quotable.core
         {
             return (List<Quotes>)quoteGenerator.quotes;
         }
+        
+        /// <summary>
+        /// This method returns a quote by ID
+        /// </summary>
+        /// <returns></returns>
+        public Quotes getQuotesbyID(int id)
+        {
+            List<Quotes> quotes = (List<Quotes>)quoteGenerator.quotes;
+            return quotes[id];
+        }
+
     }
 }

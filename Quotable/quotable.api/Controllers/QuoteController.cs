@@ -12,20 +12,19 @@ namespace quotable.api.Controllers
     [Route("api/[controller]")]
     public class QuoteController : Controller
     {
+        SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider();
         // GET: api/<controller>
         [HttpGet]
         public IEnumerable<Quotes> Get()
         {
-            SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider();
-
             return randomQuoteProvider.getQuotes();
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Quotes Get(int id)
         {
-            return "value";
+            return randomQuoteProvider.getQuotesbyID(id);
         }
 
         // POST api/<controller>
