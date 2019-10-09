@@ -16,7 +16,10 @@ namespace quotable.api.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider();
+
+            //return new string[] { "value1", "value2" };
+            return randomQuoteProvider.getQuotes(10);
         }
 
         // GET api/<controller>/5
