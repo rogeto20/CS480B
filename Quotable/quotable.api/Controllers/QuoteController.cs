@@ -18,8 +18,7 @@ namespace quotable.api.Controllers
         {
             SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider();
 
-            //return new string[] { "value1", "value2" };
-            return randomQuoteProvider.getQuotes(10);
+            return randomQuoteProvider.getQuotes();
         }
 
         // GET api/<controller>/5

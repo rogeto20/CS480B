@@ -34,5 +34,14 @@ namespace quotable.core
             }
             
         }
+
+        /// <summary>
+        /// This method returns all the strings that are generated
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<string> getQuotes()
+        {
+            return (List<string>)quoteGenerator.quotes;
+        }
     }
 }
