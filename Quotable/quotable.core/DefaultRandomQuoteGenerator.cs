@@ -24,7 +24,7 @@ namespace quotable.core
         /// Generates quotes from a text file called quotes.txt found in the project directory
         /// </summary>
         /// <returns>list of quotes</returns>
-        public static IEnumerable<Quotes> generateQuotes(){
+        private static IEnumerable<Quotes> generateQuotes(){
             List<Quotes> list = new List<Quotes>();
             String path = @"~'/../../quotable.core/quotes.txt";
             string[] lines = File.ReadAllLines(path);
@@ -33,7 +33,7 @@ namespace quotable.core
                 Quotes quote = new Quotes();
                 quote.ID = Array.IndexOf(lines, line);
                 quote.Quote = line;
-                quote.Author = "Rome";
+                quote.Author = "Ray Hudson";
                 list.Add(quote);
             }
 
