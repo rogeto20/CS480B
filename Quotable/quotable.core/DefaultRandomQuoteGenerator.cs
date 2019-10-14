@@ -11,6 +11,7 @@ namespace quotable.core
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
         public IEnumerable<Quotes> quotes;
+        //public static string path = "";
 
         /// <summary>
         /// Quote generator constructor
@@ -24,10 +25,10 @@ namespace quotable.core
         /// Generates quotes from a text file called quotes.txt found in the project directory
         /// </summary>
         /// <returns>list of quotes</returns>
-        private static IEnumerable<Quotes> generateQuotes(){
+        private static IEnumerable<Quotes> generateQuotes(string directory){
             List<Quotes> list = new List<Quotes>();
-            String path = @"~'/../../quotable.core/quotes.txt";
-            string[] lines = File.ReadAllLines(path);
+            //string path = @"~'/../../quotable.core/quotes.txt";
+            string[] lines = File.ReadAllLines(directory);
   
             foreach (string line in lines)  {
                 Quotes quote = new Quotes();
@@ -43,15 +44,15 @@ namespace quotable.core
         /// <summary>
         /// Unimplemented method implemented from interface
         /// </summary>
-        public IEnumerable<string> getQuotes(long numOfQuotes){
+        public IEnumerable<Quotes> getQuotes(long numOfQuotes){
             throw new NotImplementedException();
         }
 
         /// <summary>
         /// Getter for the quoteGenerator object
         /// </summary>
-        public static DefaultRandomQuoteGenerator getGenerator(){
-            DefaultRandomQuoteGenerator quoteGenerator = new DefaultRandomQuoteGenerator(generateQuotes());
+        public static DefaultRandomQuoteGenerator getGenerator(string path){
+            DefaultRandomQuoteGenerator quoteGenerator = new DefaultRandomQuoteGenerator(generateQuotes(path));
             return quoteGenerator;
         }
     }

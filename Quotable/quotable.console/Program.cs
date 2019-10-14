@@ -21,12 +21,12 @@ namespace quotable.console
                 isInteger = long.TryParse(Console.ReadLine(), out numberOfQuotes);
             }
 
-            SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider();
-            List<string> quotes = (List<string>)randomQuoteProvider.getQuotes(numberOfQuotes);
+            SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider(@"../../../../quotable.core/quotes.txt");
+            List<Quotes> quotes = (List<Quotes>)randomQuoteProvider.getQuotes(numberOfQuotes);
 
-            foreach (string quote in quotes)
+            foreach (Quotes quote in quotes)
             {
-                Console.WriteLine(quote);
+                Console.WriteLine(quote.Quote);
             }
 
             Console.ReadKey();

@@ -1,18 +1,24 @@
 using NUnit.Framework;
+using quotable.core;
 
 namespace Tests
 {
     public class QuoteProviderTests
     {
+        SimpleRandomQuoteProvider QuoteProvider;
+
         [SetUp]
         public void Setup()
         {
+            QuoteProvider = new SimpleRandomQuoteProvider(@"../../../../quotable.core/quotes.txt");
         }
 
         [Test]
-        public void Test1()
+        public void getQuotesById_ValidId()
         {
-            Assert.Pass();
+            int id = 1;
+            Quotes quote = QuoteProvider.getQuotesbyID(id);
+            Assert.AreEqual(id,quote.ID);
         }
     }
 }

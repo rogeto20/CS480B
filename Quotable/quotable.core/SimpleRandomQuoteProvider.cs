@@ -9,17 +9,22 @@ namespace quotable.core
    /// </summary>
     public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
-        DefaultRandomQuoteGenerator quoteGenerator = DefaultRandomQuoteGenerator.getGenerator();
+        DefaultRandomQuoteGenerator quoteGenerator;
+        
+        public SimpleRandomQuoteProvider(string path)
+        {
+            quoteGenerator = DefaultRandomQuoteGenerator.getGenerator(path);
+        }
 
         /// <summary>
         /// Gets the number of quotes provided
         /// </summary>
         /// <param name="numOfQuotes">Number of quotes requested</param>
         /// <returns>list of quotes</returns>
-        public IEnumerable<string> getQuotes(long numOfQuotes)
+        public IEnumerable<Quotes> getQuotes(long numOfQuotes)
         {
-            List<string> list = new List<string>();
-            List<string> quotes = (List<string>)quoteGenerator.quotes;
+            List<Quotes> list = new List<Quotes>();
+            List<Quotes> quotes = (List<Quotes>)quoteGenerator.quotes;
             if (numOfQuotes > quotes.Count)
             {
                 return quotes;
