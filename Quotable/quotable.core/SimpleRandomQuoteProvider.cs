@@ -10,10 +10,12 @@ namespace quotable.core
     public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         DefaultRandomQuoteGenerator quoteGenerator;
+        Quotes invalid = new Quotes();
         
         public SimpleRandomQuoteProvider(string path)
         {
             quoteGenerator = DefaultRandomQuoteGenerator.getGenerator(path);
+            invalid.ID = -1;
         }
 
         /// <summary>
@@ -56,7 +58,14 @@ namespace quotable.core
         public Quotes getQuotesbyID(int id)
         {
             List<Quotes> quotes = (List<Quotes>)quoteGenerator.quotes;
-            return quotes[id];
+            if (id < quotes.Count && id > 0)
+            {
+                return quotes[id];
+            }
+            else
+            {
+                return invalid;
+            }
         }
 
     }
