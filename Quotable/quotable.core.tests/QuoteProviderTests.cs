@@ -10,7 +10,7 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            QuoteProvider = new SimpleRandomQuoteProvider(@"../../../../quotable.core/quotes.txt");
+            QuoteProvider = new SimpleRandomQuoteProvider(Constants.LocalFilePath);
         }
 
         [Test]

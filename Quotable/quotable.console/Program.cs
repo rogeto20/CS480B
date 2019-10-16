@@ -21,7 +21,7 @@ namespace quotable.console
                 isInteger = long.TryParse(Console.ReadLine(), out numberOfQuotes);
             }
 
-            SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider(@"../../../../quotable.core/quotes.txt");
+            SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider(Constants.LocalFilePath);
             List<Quotes> quotes = (List<Quotes>)randomQuoteProvider.getQuotes(numberOfQuotes);
 
             foreach (Quotes quote in quotes)

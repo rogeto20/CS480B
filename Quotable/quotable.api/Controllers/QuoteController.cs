@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using quotable.core;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,11 +9,19 @@ namespace quotable.api.Controllers
     [Route("api/[controller]")]
     public class QuoteController : Controller
     {
-        SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider(@"~/../../quotable.core/quotes.txt");
+        public SimpleRandomQuoteProvider randomQuoteProvider;
+        public string path;
+
+        public QuoteController()
+        {
+            path = Constants.RemoteFilePath;
+        }
+
         // GET: api/<controller>
         [HttpGet]
         public IEnumerable<Quotes> Get()
         {
+            randomQuoteProvider = new SimpleRandomQuoteProvider(path);
             return randomQuoteProvider.getQuotes();
         }
 
@@ -24,6 +29,7 @@ namespace quotable.api.Controllers
         [HttpGet("{id}")]
         public Quotes Get(int id)
         {
+            randomQuoteProvider = new SimpleRandomQuoteProvider(path);
             return randomQuoteProvider.getQuotesbyID(id);
         }
 

@@ -12,6 +12,7 @@ namespace Tests
         public void Setup()
         {
             controller = new QuoteController();
+            controller.path = Constants.LocalFilePath;
         }
 
         [Test]
@@ -21,7 +22,7 @@ namespace Tests
         [TestCase(9)]
         public void getQuotesById_ValidId(int id)
         {
-            Quotes quote = QuoteProvider.getQuotesbyID(id);
+            Quotes quote = controller.Get(id);
             Assert.AreEqual(id, quote.ID);
         }
 
@@ -31,7 +32,8 @@ namespace Tests
         [TestCase(2324)]
         public void getQuotesById_InvalidId(int id)
         {
-            Quotes quote = QuoteProvider.getQuotesbyID(id);
+            
+            Quotes quote = controller.Get(id);
             Assert.AreEqual(-1, quote.ID);
         }
     }

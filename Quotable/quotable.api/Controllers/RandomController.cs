@@ -12,7 +12,13 @@ namespace quotable.api.Controllers
     [Route("api/[controller]")]
     public class RandomController : Controller
     {
-        SimpleRandomQuoteProvider randomQuoteProvider = new SimpleRandomQuoteProvider(@"~/../../quotable.core/quotes.txt");
+        public SimpleRandomQuoteProvider randomQuoteProvider;
+        public string path;
+
+        public RandomController()
+        {
+            path = Constants.RemoteFilePath;
+        }
         // GET: api/<controller>
         [HttpGet]
         public Quotes Get()

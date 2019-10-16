@@ -11,8 +11,7 @@ namespace quotable.core
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
         public IEnumerable<Quotes> quotes;
-        //public static string path = "";
-
+        
         /// <summary>
         /// Quote generator constructor
         /// </summary>
@@ -27,7 +26,6 @@ namespace quotable.core
         /// <returns>list of quotes</returns>
         private static IEnumerable<Quotes> generateQuotes(string directory){
             List<Quotes> list = new List<Quotes>();
-            //string path = @"~'/../../quotable.core/quotes.txt";
             string[] lines = File.ReadAllLines(directory);
   
             foreach (string line in lines)  {
