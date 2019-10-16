@@ -6,18 +6,28 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace quotable.api.Controllers
 {
+    /// <summary>
+    /// Quote Controller resource
+    /// </summary>
     [Route("api/[controller]")]
     public class QuoteController : Controller
     {
         public SimpleRandomQuoteProvider randomQuoteProvider;
         public string path;
 
+        /// <summary>
+        /// Quote controller constructor. Added to facilitate easy changing of the file path for testing and reusability
+        /// </summary>
         public QuoteController()
         {
             path = Constants.RemoteFilePath;
         }
 
         // GET: api/<controller>
+        /// <summary>
+        /// Get all the quotes from the .txt file in the directory
+        /// </summary>
+        /// <returns>A list of quote objects</returns>
         [HttpGet]
         public IEnumerable<Quotes> Get()
         {
@@ -25,7 +35,12 @@ namespace quotable.api.Controllers
             return randomQuoteProvider.getQuotes();
         }
 
-        // GET api/<controller>/5
+        // GET api/<controller>
+        /// <summary>
+        /// Gets a specific quote from the provided ID
+        /// </summary>
+        /// <param name="id">The id of the quote being requested</param>
+        /// <returns>The ID being requested</returns>
         [HttpGet("{id}")]
         public Quotes Get(int id)
         {

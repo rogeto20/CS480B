@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using quotable.core;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -34,6 +35,10 @@ namespace Tests
             Assert.AreEqual(-1, quote.ID);
         }
 
-
+        [Test]
+        public void getQuotes_returnsListofQuotes()
+        {
+            Assert.IsTrue(QuoteProvider.getQuotes() is IEnumerable<Quotes>);
+        }
     }
 }

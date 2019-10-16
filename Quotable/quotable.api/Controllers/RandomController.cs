@@ -20,9 +20,14 @@ namespace quotable.api.Controllers
             path = Constants.RemoteFilePath;
         }
         // GET: api/<controller>
+        /// <summary>
+        /// Gets a random quote from the .txt directory
+        /// </summary>
+        /// <returns>A random quote</returns>
         [HttpGet]
         public Quotes Get()
         {
+            randomQuoteProvider = new SimpleRandomQuoteProvider(path);
             int numberOfQuotes = randomQuoteProvider.getQuotes().Count();
             Random random = new Random();
             int rand = random.Next(0, numberOfQuotes);

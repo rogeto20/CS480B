@@ -4,6 +4,10 @@ using System.Text;
 
 namespace quotable.core
 {
+    /// <summary>
+    /// Class containing the quote structure;
+    /// The ID, Quote and the Author
+    /// </summary>
     public class Quotes
     {
         public int ID { get; set; }

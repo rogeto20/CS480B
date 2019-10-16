@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
 namespace quotable.core
@@ -49,6 +48,7 @@ namespace quotable.core
         /// <summary>
         /// Getter for the quoteGenerator object
         /// </summary>
+        /// <returns>a quote generator</returns>
         public static DefaultRandomQuoteGenerator getGenerator(string path){
             DefaultRandomQuoteGenerator quoteGenerator = new DefaultRandomQuoteGenerator(generateQuotes(path));
             return quoteGenerator;

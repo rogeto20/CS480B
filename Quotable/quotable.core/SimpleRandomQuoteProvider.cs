@@ -10,18 +10,20 @@ namespace quotable.core
     public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         DefaultRandomQuoteGenerator quoteGenerator;
-        Quotes invalid = new Quotes();
         
+        /// <summary>
+        /// Constructor for an object that provides quotes.
+        /// </summary>
+        /// <param name="path"> a folder directory from which the quote generator gets quotes from</param>
         public SimpleRandomQuoteProvider(string path)
         {
             quoteGenerator = DefaultRandomQuoteGenerator.getGenerator(path);
-            invalid.ID = -1;
         }
 
         /// <summary>
-        /// Gets the number of quotes provided
+        /// Gets the number of quotes from the number provided
         /// </summary>
-        /// <param name="numOfQuotes">Number of quotes requested</param>
+        /// <param name="numOfQuotes">Number of quotes to be returned</param>
         /// <returns>list of quotes</returns>
         public IEnumerable<Quotes> getQuotes(long numOfQuotes)
         {
@@ -43,18 +45,19 @@ namespace quotable.core
         }
 
         /// <summary>
-        /// This method returns all the strings that are generated
+        /// This method returns all the quotes that are generated
         /// </summary>
-        /// <returns></returns>
+        /// <returns>list of quotes</returns>
         public IEnumerable<Quotes> getQuotes()
         {
             return (List<Quotes>)quoteGenerator.quotes;
         }
         
         /// <summary>
-        /// This method returns a quote by ID
+        /// Gets quotes by the id provided
         /// </summary>
-        /// <returns></returns>
+        /// <param name="id">the id provided</param>
+        /// <returns>quote requested</returns>
         public Quotes getQuotesbyID(int id)
         {
             List<Quotes> quotes = (List<Quotes>)quoteGenerator.quotes;
@@ -64,7 +67,7 @@ namespace quotable.core
             }
             else
             {
-                return invalid;
+                return Constants.invalid;
             }
         }
 
