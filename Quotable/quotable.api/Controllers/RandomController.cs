@@ -25,7 +25,7 @@ namespace quotable.api.Controllers
         /// </summary>
         /// <returns>A random quote</returns>
         [HttpGet]
-        public Quotes Get()
+        public ActionResult<Quotes> Get()
         {
             randomQuoteProvider = new SimpleRandomQuoteProvider(path);
             int numberOfQuotes = randomQuoteProvider.getQuotes().Count();

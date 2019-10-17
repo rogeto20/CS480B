@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using quotable.core;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -29,10 +30,10 @@ namespace quotable.api.Controllers
         /// </summary>
         /// <returns>A list of quote objects</returns>
         [HttpGet]
-        public IEnumerable<Quotes> Get()
+        public ActionResult<IEnumerable<Quotes>> Get()
         {
             randomQuoteProvider = new SimpleRandomQuoteProvider(path);
-            return randomQuoteProvider.getQuotes();
+            return randomQuoteProvider.getQuotes().ToList() ;
         }
 
         // GET api/<controller>
@@ -42,7 +43,7 @@ namespace quotable.api.Controllers
         /// <param name="id">The id of the quote being requested</param>
         /// <returns>The ID being requested</returns>
         [HttpGet("{id}")]
-        public Quotes Get(int id)
+        public ActionResult<Quotes> Get(int id)
         {
             randomQuoteProvider = new SimpleRandomQuoteProvider(path);
             return randomQuoteProvider.getQuotesbyID(id);

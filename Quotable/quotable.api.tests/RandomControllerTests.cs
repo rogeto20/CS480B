@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using quotable.api.Controllers;
 using quotable.core;
@@ -17,8 +18,8 @@ namespace Tests
         [Test]
         public void GetRandomQuote()
         {
-            Quotes quote = controller.Get();
-            Assert.IsTrue(quote is Quotes);
+            //var quote = controller.Get();
+            Assert.IsTrue(controller.Get() is ActionResult<Quotes>);
         }
     }
 }

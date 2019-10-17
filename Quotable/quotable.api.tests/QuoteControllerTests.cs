@@ -22,8 +22,8 @@ namespace Tests
         [TestCase(9)]
         public void getQuotesById_ValidId(int id)
         {
-            Quotes quote = controller.Get(id);
-            Assert.AreEqual(id, quote.ID);
+            var quote = controller.Get(id);
+            Assert.AreEqual(id, quote.Value.ID);
         }
 
         [Test]
@@ -33,8 +33,8 @@ namespace Tests
         public void getQuotesById_InvalidId(int id)
         {
             
-            Quotes quote = controller.Get(id);
-            Assert.AreEqual(-1, quote.ID);
+            var quote = controller.Get(id);
+            Assert.AreEqual(-1, quote.Value.ID);
         }
     }
 }
