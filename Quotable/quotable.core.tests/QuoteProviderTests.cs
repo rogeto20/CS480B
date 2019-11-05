@@ -4,16 +4,24 @@ using System.Collections.Generic;
 
 namespace Tests
 {
+    /// <summary>
+    /// Test class for the quote provider in the quotable.core
+    /// </summary>
     public class QuoteProviderTests
     {
         SimpleRandomQuoteProvider QuoteProvider;
 
         [SetUp]
-        public void Setup()
+        private void Setup()
         {
             QuoteProvider = new SimpleRandomQuoteProvider(Constants.LocalFilePath);
         }
 
+        /// <summary>
+        /// tests getting of valid quotes from valid ids
+        /// Asserts that the quotes gotten are equal to the id passed
+        /// </summary>
+        /// <param name="id"></param>
         [Test]
         [TestCase(3)]
         [TestCase(4)]
@@ -25,6 +33,11 @@ namespace Tests
             Assert.AreEqual(id,quote.ID);
         }
 
+        /// <summary>
+        /// tests getting of valid quotes from invalid ids
+        /// Asserts that the quotes gotten are equal to -1 which is what is returned from invalid ids
+        /// </summary>
+        /// <param name="id"></param>
         [Test]
         [TestCase(-10)]
         [TestCase(123)]
@@ -35,6 +48,9 @@ namespace Tests
             Assert.AreEqual(-1, quote.ID);
         }
 
+        /// <summary>
+        /// Tests that the method get quotes returns a list of quotes
+        /// </summary>
         [Test]
         public void getQuotes_returnsListofQuotes()
         {

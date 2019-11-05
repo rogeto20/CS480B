@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.api.tests</name>
+    </assembly>
+    <members>
+        <member name="T:Tests.QuoteControllerTests">
+            <summary>
+            Class containing tests for the quote controller in the quoteable.api project
+            </summary>
+        </member>
+        <member name="M:Tests.QuoteControllerTests.GetQuotesById_ValidId(System.Int32)">
+            <summary>
+            uses the controller to call the get method using valid id's
+            asserts that the quote gotten has the same id as the id given
+            </summary>
+            <param name="id">the quote id being passed into the test</param>
+        </member>
+        <member name="M:Tests.QuoteControllerTests.GetQuotesById_InvalidId(System.Int32)">
+            <summary>
+            uses the quote controller to get quotes using invalid ids.
+            asserts that the quote recieved has an id of -1 as an invalid id is passed into it
+            </summary>
+            <param name="id">invalid ids</param>
+        </member>
+        <member name="T:Tests.RandomControllerTests">
+            <summary>
+            This is the test class for the APIs 'randomQuote' resource
+            </summary>
+        </member>
+        <member name="M:Tests.RandomControllerTests.Setup">
+            <summary>
+            This is the setup function to run before every test
+            </summary>
+        </member>
+        <member name="M:Tests.RandomControllerTests.GetRandomQuote">
+            <summary>
+            test for the random quotes
+            </summary>
+        </member>
+    </members>
+</doc>

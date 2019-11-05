@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.core.tests</name>
+    </assembly>
+    <members>
+        <member name="T:Tests.QuoteGeneratorTests">
+            <summary>
+            This quote generator test class
+            </summary>
+        </member>
+        <member name="M:Tests.QuoteGeneratorTests.Setup">
+            <summary>
+            Setup for the Quote generator class
+            </summary>
+        </member>
+        <member name="M:Tests.QuoteGeneratorTests.Test1">
+            <summary>
+            Model for the first test
+            </summary>
+        </member>
+        <member name="T:Tests.QuoteProviderTests">
+            <summary>
+            Test class for the quote provider in the quotable.core
+            </summary>
+        </member>
+        <member name="M:Tests.QuoteProviderTests.getQuotesById_ValidId(System.Int32)">
+            <summary>
+            tests getting of valid quotes from valid ids
+            Asserts that the quotes gotten are equal to the id passed
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Tests.QuoteProviderTests.getQuotesById_InvalidId(System.Int32)">
+            <summary>
+            tests getting of valid quotes from invalid ids
+            Asserts that the quotes gotten are equal to -1 which is what is returned from invalid ids
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Tests.QuoteProviderTests.getQuotes_returnsListofQuotes">
+            <summary>
+            Tests that the method get quotes returns a list of quotes
+            </summary>
+        </member>
+    </members>
+</doc>

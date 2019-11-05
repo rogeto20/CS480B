@@ -9,6 +9,9 @@ namespace quotable.core
     /// </summary>
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
+        /// <summary>
+        /// This is the list of quotes that is returned after they are generated from the .txt file
+        /// </summary>
         public IEnumerable<Quotes> quotes;
         
         /// <summary>

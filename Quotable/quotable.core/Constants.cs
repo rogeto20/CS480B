@@ -11,8 +11,19 @@ namespace quotable.core
     /// </summary>
     public class Constants
     {
+        /// <summary>
+        /// This is the string with the file path when the API is run locally
+        /// </summary>
         public static string LocalFilePath = @"../../../../quotable.core/quotes.txt";
+
+        /// <summary>
+        /// This is the string with the file path when the API is run remotely
+        /// </summary>
         public static string RemoteFilePath = @"~/../../quotable.core/quotes.txt";
+
+        /// <summary>
+        /// This is the invalid quote that is returned for requests that do not exist
+        /// </summary>
         public static Quotes invalid = new Quotes() { Author = "-", Quote = "Unavailable", ID = -1 };
     }
 }
