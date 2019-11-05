@@ -11,8 +11,11 @@ namespace Tests
     {
         SimpleRandomQuoteProvider QuoteProvider;
 
+        /// <summary>
+        /// This is the setup method run before every quote provider test
+        /// </summary>
         [SetUp]
-        private void Setup()
+        public void Setup()
         {
             QuoteProvider = new SimpleRandomQuoteProvider(Constants.LocalFilePath);
         }

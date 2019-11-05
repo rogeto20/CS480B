@@ -9,6 +9,11 @@
             Class containing tests for the quote controller in the quoteable.api project
             </summary>
         </member>
+        <member name="M:Tests.QuoteControllerTests.Setup">
+            <summary>
+            This is the setup method run before every quote controller test
+            </summary>
+        </member>
         <member name="M:Tests.QuoteControllerTests.GetQuotesById_ValidId(System.Int32)">
             <summary>
             uses the controller to call the get method using valid id's

@@ -11,8 +11,11 @@ namespace Tests
     {
         QuoteController controller;
 
+        /// <summary>
+        /// This is the setup method run before every quote controller test
+        /// </summary>
         [SetUp]
-        private void Setup()
+        public void Setup()
         {
             controller = new QuoteController
             {

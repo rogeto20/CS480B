@@ -24,6 +24,11 @@
             Test class for the quote provider in the quotable.core
             </summary>
         </member>
+        <member name="M:Tests.QuoteProviderTests.Setup">
+            <summary>
+            This is the setup method run before every quote provider test
+            </summary>
+        </member>
         <member name="M:Tests.QuoteProviderTests.getQuotesById_ValidId(System.Int32)">
             <summary>
             tests getting of valid quotes from valid ids
