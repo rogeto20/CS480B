@@ -28,7 +28,7 @@ namespace quotable.api.Controllers
         /// </summary>
         public QuoteController()
         {
-            path = Constants.RemoteFilePath;
+            path = Constants.LocalFilePath;
         }
 
         // GET: api/<controller>

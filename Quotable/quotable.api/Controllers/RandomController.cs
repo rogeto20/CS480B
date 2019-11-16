@@ -30,7 +30,7 @@ namespace quotable.api.Controllers
         /// </summary>
         public RandomController()
         {
-            path = Constants.RemoteFilePath;
+            path = Constants.LocalFilePath;
         }
         // GET: api/<controller>
         /// <summary>
