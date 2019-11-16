@@ -11,4 +11,11 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <DocumentationFile>C:\Users\rogeto20\Source\Repos\CS480B\Quotable\quotable.console\quotable.console.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

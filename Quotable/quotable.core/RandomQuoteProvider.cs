@@ -4,9 +4,16 @@ using System.Text;
 
 namespace quotable.core
 {
-    ///Interface
+    /// <summary>
+    /// Interface class
+    /// </summary>
     public interface RandomQuoteProvider
     {
-        IEnumerable<string> getQuotes(long numOfQuotes);
+        /// <summary>
+        /// This is the interface method get quotes
+        /// </summary>
+        /// <param name="numOfQuotes"></param>
+        /// <returns></returns>
+        IEnumerable<Quotes> getQuotes(long numOfQuotes);
     }
 }

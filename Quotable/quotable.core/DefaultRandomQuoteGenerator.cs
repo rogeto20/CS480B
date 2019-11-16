@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
 namespace quotable.core
@@ -10,13 +9,16 @@ namespace quotable.core
     /// </summary>
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
-        public IEnumerable<string> quotes;
-
+        /// <summary>
+        /// This is the list of quotes that is returned after they are generated from the .txt file
+        /// </summary>
+        public IEnumerable<Quotes> quotes;
+        
         /// <summary>
         /// Quote generator constructor
         /// </summary>
         /// <param name="listOfQuotes">Takes in a list of quotes</param>
-        public DefaultRandomQuoteGenerator(IEnumerable<string> listOfQuotes){
+        public DefaultRandomQuoteGenerator(IEnumerable<Quotes> listOfQuotes){
             quotes = listOfQuotes;
         }
 
@@ -24,13 +26,16 @@ namespace quotable.core
         /// Generates quotes from a text file called quotes.txt found in the project directory
         /// </summary>
         /// <returns>list of quotes</returns>
-        public static IEnumerable<string> generateQuotes(){
-            List<string> list = new List<string>();
-            String path = @"../../../../quotable.core/quotes.txt";
-            string[] lines = File.ReadAllLines(path);
+        private static IEnumerable<Quotes> generateQuotes(string directory){
+            List<Quotes> list = new List<Quotes>();
+            string[] lines = File.ReadAllLines(directory);
   
             foreach (string line in lines)  {
-                list.Add(line);
+                Quotes quote = new Quotes();
+                quote.ID = Array.IndexOf(lines, line);
+                quote.Quote = line;
+                quote.Author = "Ray Hudson";
+                list.Add(quote);
             }
 
             return list;
@@ -39,15 +44,16 @@ namespace quotable.core
         /// <summary>
         /// Unimplemented method implemented from interface
         /// </summary>
-        public IEnumerable<string> getQuotes(long numOfQuotes){
+        public IEnumerable<Quotes> getQuotes(long numOfQuotes){
             throw new NotImplementedException();
         }
 
         /// <summary>
         /// Getter for the quoteGenerator object
         /// </summary>
-        public static DefaultRandomQuoteGenerator getGenerator(){
-            DefaultRandomQuoteGenerator quoteGenerator = new DefaultRandomQuoteGenerator(generateQuotes());
+        /// <returns>a quote generator</returns>
+        public static DefaultRandomQuoteGenerator getGenerator(string path){
+            DefaultRandomQuoteGenerator quoteGenerator = new DefaultRandomQuoteGenerator(generateQuotes(path));
             return quoteGenerator;
         }
     }

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.core</name>
+    </assembly>
+    <members>
+        <member name="T:quotable.core.Constants">
+            <summary>
+            This class contains constants that are being reused all over the project. 
+            It was made to minimize the changes that would need to be made when trying to access
+            Quotes
+            </summary>
+        </member>
+        <member name="F:quotable.core.Constants.LocalFilePath">
+            <summary>
+            This is the string with the file path when the API is run locally
+            </summary>
+        </member>
+        <member name="F:quotable.core.Constants.RemoteFilePath">
+            <summary>
+            This is the string with the file path when the API is run remotely
+            </summary>
+        </member>
+        <member name="F:quotable.core.Constants.invalid">
+            <summary>
+            This is the invalid quote that is returned for requests that do not exist
+            </summary>
+        </member>
+        <member name="T:quotable.core.DefaultRandomQuoteGenerator">
+            <summary>
+            Class containing the quote generator
+            </summary>
+        </member>
+        <member name="F:quotable.core.DefaultRandomQuoteGenerator.quotes">
+            <summary>
+            This is the list of quotes that is returned after they are generated from the .txt file
+            </summary>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.#ctor(System.Collections.Generic.IEnumerable{quotable.core.Quotes})">
+            <summary>
+            Quote generator constructor
+            </summary>
+            <param name="listOfQuotes">Takes in a list of quotes</param>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.generateQuotes(System.String)">
+            <summary>
+            Generates quotes from a text file called quotes.txt found in the project directory
+            </summary>
+            <returns>list of quotes</returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.getQuotes(System.Int64)">
+            <summary>
+            Unimplemented method implemented from interface
+            </summary>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.getGenerator(System.String)">
+            <summary>
+            Getter for the quoteGenerator object
+            </summary>
+            <returns>a quote generator</returns>
+        </member>
+        <member name="T:quotable.core.Quotes">
+            <summary>
+            Class containing the quote structure;
+            The ID, Quote and the Author
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quotes.ID">
+            <summary>
+            The ID of a quote
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quotes.Quote">
+            <summary>
+            The text contained in a quote
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quotes.Author">
+            <summary>
+            The author of a quote
+            </summary>
+        </member>
+        <member name="T:quotable.core.RandomQuoteProvider">
+            <summary>
+            Interface class
+            </summary>
+        </member>
+        <member name="M:quotable.core.RandomQuoteProvider.getQuotes(System.Int64)">
+            <summary>
+            This is the interface method get quotes
+            </summary>
+            <param name="numOfQuotes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:quotable.core.SimpleRandomQuoteProvider">
+            <summary>
+            Class providing random quotes
+            </summary>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.#ctor(System.String)">
+            <summary>
+            Constructor for an object that provides quotes.
+            </summary>
+            <param name="path"> a folder directory from which the quote generator gets quotes from</param>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.getQuotes(System.Int64)">
+            <summary>
+            Gets the number of quotes from the number provided
+            </summary>
+            <param name="numOfQuotes">Number of quotes to be returned</param>
+            <returns>list of quotes</returns>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.getQuotes">
+            <summary>
+            This method returns all the quotes that are generated
+            </summary>
+            <returns>list of quotes</returns>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.getQuotesbyID(System.Int32)">
+            <summary>
+            Gets quotes by the id provided
+            </summary>
+            <param name="id">the id provided</param>
+            <returns>quote requested</returns>
+        </member>
+    </members>
+</doc>
