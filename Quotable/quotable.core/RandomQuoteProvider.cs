@@ -4,8 +4,9 @@ using System.Text;
 
 namespace quotable.core
 {
+    ///Interface
     public interface RandomQuoteProvider
     {
-        IEnumerable<string> getQuotes(int num);
+        IEnumerable<string> getQuotes(long numOfQuotes);
     }
 }
