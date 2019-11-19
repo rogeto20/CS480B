@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace quotable.core
 {
@@ -21,8 +21,14 @@ namespace quotable.core
         public string Quote { get; set; }
 
         /// <summary>
-        /// The author of a quote
-        /// </summary>
-        public string Author { get; set; }
+		/// The collection of authors of the Quote
+		/// </summary>
+		[NotMapped]
+        public IEnumerable<Author> Author => from x in QuoteAuthor select x.Author;
+
+        /// <summary>
+		/// The relation of document to author
+		/// </summary>
+		public ICollection<QuoteAuthor> QuoteAuthor { get; set; } = new List<QuoteAuthor>();
     }
 }
