@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using quotable.core;
+using quotable.core.data;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace quotable.api
 {
@@ -36,6 +35,9 @@ namespace quotable.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            // setup to use a sqlite database
+            services.AddDbContext<QuoteContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
         }
 
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +55,37 @@ namespace quotable.api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<QuoteContext>();
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+                PopulateDatabase(context);
+            }
+        }
+
+        private static void PopulateDatabase(QuoteContext context)
+        {
+            string[] lines = File.ReadAllLines(Constants.RemoteFilePath);
+
+            Author author = new Author()
+            {
+                FirstName = "Ray",
+                LastName = "Hudson"
+            };
+
+            foreach (string line in lines)
+            {
+                Quotes quote = new Quotes();
+                quote.ID = Array.IndexOf(lines, line);
+                quote.Quote = line;
+
+                QuoteAuthor quoteAuthor = new QuoteAuthor() { Quote = quote, Author = author };
+                context.Add(quoteAuthor);
+            }
+
+            context.SaveChanges();
         }
     }
 }

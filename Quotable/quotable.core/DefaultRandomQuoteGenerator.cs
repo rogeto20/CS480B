@@ -34,7 +34,7 @@ namespace quotable.core
                 Quotes quote = new Quotes();
                 quote.ID = Array.IndexOf(lines, line);
                 quote.Quote = line;
-                quote.Author = "Ray Hudson";
+                //quote.Author = "Ray Hudson";
                 list.Add(quote);
             }
 

@@ -24,6 +24,6 @@ namespace quotable.core
         /// <summary>
         /// This is the invalid quote that is returned for requests that do not exist
         /// </summary>
-        public static Quotes invalid = new Quotes() { Author = "-", Quote = "Unavailable", ID = -1 };
+        public static Quotes invalid = null;
     }
 }
