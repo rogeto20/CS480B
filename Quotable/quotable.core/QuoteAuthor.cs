@@ -6,7 +6,7 @@
     public class QuoteAuthor
     {
         /// <summary>
-		/// The ID of the quote related to the author.
+		/// The Id of the quote related to the author.
 		/// </summary>
 		public long QuoteId { get; set; }
         /// <summary>
@@ -15,7 +15,7 @@
         public Quotes Quote { get; set; }
 
         /// <summary>
-        /// The ID of the author related to the quote.
+        /// The Id of the author related to the quote.
         /// </summary>
         public long AuthorId { get; set; }
         /// <summary>

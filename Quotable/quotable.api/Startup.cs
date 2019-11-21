@@ -69,23 +69,29 @@ namespace quotable.api
         {
             string[] lines = File.ReadAllLines(Constants.RemoteFilePath);
 
-            Author author = new Author()
-            {
-                FirstName = "Ray",
-                LastName = "Hudson"
-            };
+
+            Quotes quote1 = new Quotes();
+            //quote.Id = Array.IndexOf(lines, line);
+            quote1.Quote = "This is a test";
+
+            //QuoteAuthor quoteAuthor = new QuoteAuthor() { Quote = quote1, Author = author };
+            //context.AddRange(quoteAuthor);
+            //context.SaveChanges();
 
             foreach (string line in lines)
             {
+                Author author = new Author()
+                {
+                    FirstName = "Ray",
+                    LastName = "Hudson"
+                };
                 Quotes quote = new Quotes();
-                quote.ID = Array.IndexOf(lines, line);
                 quote.Quote = line;
-
+                
                 QuoteAuthor quoteAuthor = new QuoteAuthor() { Quote = quote, Author = author };
-                context.Add(quoteAuthor);
+                context.AddRange(quoteAuthor);
+                context.SaveChanges();
             }
-
-            context.SaveChanges();
         }
     }
 }

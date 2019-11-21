@@ -33,7 +33,7 @@ namespace Tests
         public void getQuotesById_ValidId(int id)
         {
             Quotes quote = QuoteProvider.getQuotesbyID(id);
-            Assert.AreEqual(id,quote.ID);
+            Assert.AreEqual(id,quote.Id);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Tests
         public void getQuotesById_InvalidId(int id)
         {
             Quotes quote = QuoteProvider.getQuotesbyID(id);
-            Assert.AreEqual(-1, quote.ID);
+            Assert.AreEqual(-1, quote.Id);
         }
 
         /// <summary>

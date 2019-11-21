@@ -6,14 +6,14 @@ namespace quotable.core
 {
     /// <summary>
     /// Class containing the quote structure;
-    /// The ID, Quote and the Author
+    /// The Id, Quote and the Author
     /// </summary>
     public class Quotes
     {
         /// <summary>
-        /// The ID of a quote
+        /// The Id of a quote
         /// </summary>
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// The text contained in a quote

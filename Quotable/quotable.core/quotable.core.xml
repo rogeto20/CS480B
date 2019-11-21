@@ -114,7 +114,7 @@
         </member>
         <member name="P:quotable.core.QuoteAuthor.QuoteId">
             <summary>
-            The ID of the quote related to the author.
+            The Id of the quote related to the author.
             </summary>
         </member>
         <member name="P:quotable.core.QuoteAuthor.Quote">
@@ -124,7 +124,7 @@
         </member>
         <member name="P:quotable.core.QuoteAuthor.AuthorId">
             <summary>
-            The ID of the author related to the quote.
+            The Id of the author related to the quote.
             </summary>
         </member>
         <member name="P:quotable.core.QuoteAuthor.Author">
@@ -135,12 +135,12 @@
         <member name="T:quotable.core.Quotes">
             <summary>
             Class containing the quote structure;
-            The ID, Quote and the Author
+            The Id, Quote and the Author
             </summary>
         </member>
-        <member name="P:quotable.core.Quotes.ID">
+        <member name="P:quotable.core.Quotes.Id">
             <summary>
-            The ID of a quote
+            The Id of a quote
             </summary>
         </member>
         <member name="P:quotable.core.Quotes.Quote">

@@ -32,7 +32,7 @@ namespace quotable.core
   
             foreach (string line in lines)  {
                 Quotes quote = new Quotes();
-                quote.ID = Array.IndexOf(lines, line);
+                quote.Id = Array.IndexOf(lines, line);
                 quote.Quote = line;
                 //quote.Author = "Ray Hudson";
                 list.Add(quote);

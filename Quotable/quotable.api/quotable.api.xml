@@ -9,17 +9,7 @@
             Quote Controller resource
             </summary>
         </member>
-        <member name="F:quotable.api.Controllers.QuoteController.randomQuoteProvider">
-            <summary>
-            This is an quote provider object from the core project
-            </summary>
-        </member>
-        <member name="F:quotable.api.Controllers.QuoteController.path">
-            <summary>
-            This is the path to the .txt file
-            </summary>
-        </member>
-        <member name="M:quotable.api.Controllers.QuoteController.#ctor">
+        <member name="M:quotable.api.Controllers.QuoteController.#ctor(quotable.core.data.QuoteContext)">
             <summary>
             Quote controller constructor. Added to facilitate easy changing of the file path for testing and reusability
             </summary>
@@ -32,10 +22,10 @@
         </member>
         <member name="M:quotable.api.Controllers.QuoteController.Get(System.Int32)">
             <summary>
-            Gets a specific quote from the provided ID
+            Gets a specific quote from the provided Id
             </summary>
             <param name="id">The id of the quote being requested</param>
-            <returns>The ID being requested</returns>
+            <returns>The Id being requested</returns>
         </member>
         <member name="M:quotable.api.Controllers.QuoteController.Post(System.String)">
             <summary>

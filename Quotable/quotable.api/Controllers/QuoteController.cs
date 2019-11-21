@@ -31,26 +31,26 @@ namespace quotable.api.Controllers
         /// </summary>
         /// <returns>A list of quote objects</returns>
         [HttpGet]
-        public ActionResult<IEnumerable<Quotes>> Get()
+        public IEnumerable<Quotes> Get()
         {
             var quote =  from quotes in _context.Quotes
                             select new Quotes()
                             {
                                 Quote = quotes.Quote
                             };
-            return View(quote);
+            return quote;
         }
 
         // GET api/<controller>
         /// <summary>
-        /// Gets a specific quote from the provided ID
+        /// Gets a specific quote from the provided Id
         /// </summary>
         /// <param name="id">The id of the quote being requested</param>
-        /// <returns>The ID being requested</returns>
+        /// <returns>The Id being requested</returns>
         [HttpGet("{id}")]
         public ActionResult<Quotes> Get(int id)
         {
-            var quote = _context.Quotes.SingleOrDefault(d => d.ID == id);
+            var quote = _context.Quotes.SingleOrDefault(d => d.Id == id);
 
             if (quote == null)
             {
