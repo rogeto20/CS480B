@@ -69,15 +69,6 @@ namespace quotable.api
         {
             string[] lines = File.ReadAllLines(Constants.RemoteFilePath);
 
-
-            Quotes quote1 = new Quotes();
-            //quote.Id = Array.IndexOf(lines, line);
-            quote1.Quote = "This is a test";
-
-            //QuoteAuthor quoteAuthor = new QuoteAuthor() { Quote = quote1, Author = author };
-            //context.AddRange(quoteAuthor);
-            //context.SaveChanges();
-
             foreach (string line in lines)
             {
                 Author author = new Author()
@@ -87,7 +78,7 @@ namespace quotable.api
                 };
                 Quotes quote = new Quotes();
                 quote.Quote = line;
-                
+
                 QuoteAuthor quoteAuthor = new QuoteAuthor() { Quote = quote, Author = author };
                 context.AddRange(quoteAuthor);
                 context.SaveChanges();

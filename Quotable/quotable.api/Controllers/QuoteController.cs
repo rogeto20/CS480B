@@ -31,14 +31,14 @@ namespace quotable.api.Controllers
         /// </summary>
         /// <returns>A list of quote objects</returns>
         [HttpGet]
-        public IEnumerable<Quotes> Get()
+        public ActionResult<IEnumerable<Quotes>> Get()
         {
             var quote =  from quotes in _context.Quotes
                             select new Quotes()
                             {
                                 Quote = quotes.Quote
                             };
-            return quote;
+            return quote.ToList();
         }
 
         // GET api/<controller>
