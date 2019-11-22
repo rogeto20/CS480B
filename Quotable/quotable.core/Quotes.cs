@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace quotable.core
 {
     /// <summary>
     /// Class containing the quote structure;
-    /// The ID, Quote and the Author
+    /// The Id, Quote and the Author
     /// </summary>
     public class Quotes
     {
         /// <summary>
-        /// The ID of a quote
+        /// The Id of a quote
         /// </summary>
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// The text contained in a quote
@@ -21,8 +21,14 @@ namespace quotable.core
         public string Quote { get; set; }
 
         /// <summary>
-        /// The author of a quote
-        /// </summary>
-        public string Author { get; set; }
+		/// The collection of authors of the Quote
+		/// </summary>
+		[NotMapped]
+        public IEnumerable<Author> Author => from x in QuoteAuthor select x.Author;
+
+        /// <summary>
+		/// The relation of document to author
+		/// </summary>
+		public ICollection<QuoteAuthor> QuoteAuthor { get; set; } = new List<QuoteAuthor>();
     }
 }

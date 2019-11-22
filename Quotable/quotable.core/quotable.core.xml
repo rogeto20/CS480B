@@ -4,6 +4,31 @@
         <name>quotable.core</name>
     </assembly>
     <members>
+        <member name="T:quotable.core.Author">
+            <summary>
+            The author of a quote.
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.Id">
+            <summary>
+            The unique identifier for the author.
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.FirstName">
+            <summary>
+            The first name of the author.
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.LastName">
+            <summary>
+            The last name fo the author
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.DocumentAuthor">
+            <summary>
+            The relation of quote to author
+            </summary>
+        </member>
         <member name="T:quotable.core.Constants">
             <summary>
             This class contains constants that are being reused all over the project. 
@@ -25,6 +50,29 @@
             <summary>
             This is the invalid quote that is returned for requests that do not exist
             </summary>
+        </member>
+        <member name="T:quotable.core.data.QuoteContext">
+            <summary>
+            The database context that provides access to document and other data.
+            </summary>
+        </member>
+        <member name="M:quotable.core.data.QuoteContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:quotable.core.data.QuoteContext.Quotes">
+            <summary>
+            Used to access Quotes in the database.
+            </summary>
+        </member>
+        <member name="P:quotable.core.data.QuoteContext.Authors">
+            <summary>
+            Used to access authors in the database.
+            </summary>
+        </member>
+        <member name="M:quotable.core.data.QuoteContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
         </member>
         <member name="T:quotable.core.DefaultRandomQuoteGenerator">
             <summary>
@@ -59,15 +107,40 @@
             </summary>
             <returns>a quote generator</returns>
         </member>
+        <member name="T:quotable.core.QuoteAuthor">
+            <summary>
+            Represents the many-to-many relation between quotes and authors
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.QuoteId">
+            <summary>
+            The Id of the quote related to the author.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.Quote">
+            <summary>
+            The quote related to the author.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.AuthorId">
+            <summary>
+            The Id of the author related to the quote.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.Author">
+            <summary>
+            The author related to the quote.
+            </summary>
+        </member>
         <member name="T:quotable.core.Quotes">
             <summary>
             Class containing the quote structure;
-            The ID, Quote and the Author
+            The Id, Quote and the Author
             </summary>
         </member>
-        <member name="P:quotable.core.Quotes.ID">
+        <member name="P:quotable.core.Quotes.Id">
             <summary>
-            The ID of a quote
+            The Id of a quote
             </summary>
         </member>
         <member name="P:quotable.core.Quotes.Quote">
@@ -77,7 +150,12 @@
         </member>
         <member name="P:quotable.core.Quotes.Author">
             <summary>
-            The author of a quote
+            The collection of authors of the Quote
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quotes.QuoteAuthor">
+            <summary>
+            The relation of document to author
             </summary>
         </member>
         <member name="T:quotable.core.RandomQuoteProvider">
